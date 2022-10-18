@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body{
+            background-image: url('https://www.bing.com/th?id=OIP.CBF6W7NcFzVQIFoT5TAwVQHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #headings{
+            text-align: center;
+            background-color: rgb(191, 123, 191);
+            border: 2px solid;
+            border-radius: 5px;
+        }
+        #c{
+            text-align: center;
+            border: 2px solid;
+            border-radius: 5px;
+        }
+        .buttons{
+            border: 2px groove black;
+            background-color: aquamarine;
+        }
+        #login{
+            float:right
+        }
+    </style>
+</head>
+<body>
+    <% if(message_success.length) { %>
+        <div class="alert alert-success" role="alert">
+            <%= message_success %>
+        </div>
+    <% } %>
+    <h2 id="headings">Home Page</h2>
+    <div>
+        <h4 id="c">Tesla First Copy Enterprises &#128514;</h4>
+    </div>
+    <br>
+    <div>
+        <a href="/login"><input type="button" value="User Login" class="buttons" id="login"></a>
+        
+    </div>
+    <br>
+    <div>
+        <a href="/registration" id="w"><input type="button" value="New User"  class="buttons"></a>
+        
+    </div>
+</body>
+</html>

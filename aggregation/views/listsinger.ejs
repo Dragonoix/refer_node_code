@@ -1,0 +1,18 @@
+<table border="1">
+    <tr>
+        <th>Movie Name</th>
+        <th>Budget</th>
+        <th>Director Name</th>
+        <th>Director Origin</th>
+        <th>Singer Name</th>
+    </tr>
+    <% allData.map(data => { %>
+        <tr>
+            <td><%= data.movie.name %></td>
+            <td><%= data.movie.budget %></td>
+            <td><%= data.movie.director.name %></td> 
+            <td><%= data.movie.director.origin %></td>
+            <td><%= data.name %></td>
+        </tr>
+    <% }) %>
+</table>

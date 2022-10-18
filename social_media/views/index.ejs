@@ -1,0 +1,39 @@
+<%- include('layouts/header') %>
+    <h1>Social Media</h1>
+    <form action="/socialinsert" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Like</label>
+                <input type="number" class="form-control" name="like" id="like" required>
+            </div>
+            <div class="form-group">
+                <label>Dislike</label>
+                <input type="number" class="form-control" name="dislike" id="dislike" required>
+            </div>
+            <div class="form-group">
+                <label>Image</label>
+                <select name="myImage" id="myImage">
+                    <option disabled selected>Choose Name</option>
+                    <% allData.map(data => { %>
+                        <option value="<%= data._id %>"><%= data.myName %></option>
+                    <% }) %>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <% allData.map((data)=> { %>
+                <div id="imagesMain">
+                    <div class="imagebox">
+                        <img src="/uploads/<%= data.myImage %>">
+                        <div class="caption"><%= data.like %> <%= data.dislike %></div>             
+                    </div>        
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">update</button>
+    </form>
+</div>
+
+<%- include('layouts/footer') %>

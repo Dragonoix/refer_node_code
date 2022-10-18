@@ -1,0 +1,16 @@
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Budget</th>
+        <th>Director Name</th>
+        <th>Director Origin</th>
+    </tr>
+    <% allData.map(data => { %>
+        <tr>
+            <td><%= data.name %></td>
+            <td><%= data.budget %></td>
+            <td><%= data.director.name %></td> 
+            <td><%= data.director.origin %></td>
+        </tr>
+    <% }) %>
+</table>

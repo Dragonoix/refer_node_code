@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body{
+            background-image: url('https://www.bing.com/th?id=OIP.CBF6W7NcFzVQIFoT5TAwVQHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .buttons{
+            border: 2px groove black;
+            background-color: aquamarine;
+        }
+        #form{
+            text-align: center;
+            background-color: rgb(191, 123, 191);
+            border: 2px solid;
+            border-radius: 5px;
+        }
+        .label{
+            background-color: skyblue;
+            border: 2px dotted brown;
+            border-radius: 3px;
+       
+        }
+    </style>
+</head>
+<body>
+    <% if(message_failed.length) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= message_failed %>
+        </div>
+    <% } %>
+      <% if(message_warning.length) { %>
+        <div class="alert alert-warning" role="alert">
+            <%= message_warning %>
+        </div>
+    <% } %>
+    <h2 id="form">
+        Rgistration Page
+    </h2>
+    <form action="/register" method="post">
+        <div>
+            <label for="name"  class="label">Name:</label>
+            <input type="text" name="MyName" id="MyName" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="mail" class="label">Email:</label>
+            <input type="email" name="MyEmail" id="MyEmail" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="date" class="label">Date:</label>
+            <input type="date" name="MyDate" id="MyDate" required>
+        </div>
+        <br>
+
+
+        <div>
+            <label for="gender" class="label">Gender: </label> 
+            Male <input type="radio" name="MyGender" value="Male" required> Female <input type="radio" name="MyGender" value="Female" required> Not to Disclose <input type="radio" name="MyGender" value="Others" required>
+        </div>
+        <br>
+
+
+        <div>
+            <label for="education" class="label">Education:</label>
+            <select required name="MyEducation" id="MyEducation">
+                <option value="select" selected>Select Qualification</option>
+                <option value="BCA">Bachelor of Computer Application</option>
+                <option value="B.TECH">Bachelor of Technology</option>
+                <option value="M.TECH">Master of Technology</option>
+                <option value="MCA">Master of Computer Application</option>
+                <option value="BCOMH">Bachelor of Commerce(H)</option>
+                <option value="BCOMG">Bachelor of Commerce(G)</option>
+                <option value="MCOM">Master of Commerce</option>
+
+            </select>
+        </div>
+        <br>
+
+        <div>
+            <label for="eligibility" class="label">Are You Eligible For This Course: </label>
+            <input type="checkbox" name="MyEligibility" id="MyEligibility" value="Eligible">
+            <label>Yes</label>
+            <input type="checkbox" name="MyEligibility" id="MyEligibility" value="Not Eligible">
+            <label>No</label>
+        </div>
+        <br>
+
+        <div>
+            <label for="password" class="label">Password: </label>
+            <input type="password" name="MyPassword" id="Mypassword" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="CPassword" class="label">Confirm Password (Same as Above): </label>
+            <input type="password" name="MyCPassword" id="MyCPassword" required>
+        </div>
+        <br>
+        
+
+        <div>
+            <input type="submit" value="Submit now" class="buttons">
+            <input type="reset" value="Reset Now" class="buttons">
+        </div>
+    </form>
+</body>
+</html>

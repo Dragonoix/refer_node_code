@@ -1,0 +1,52 @@
+<%- include('layouts/header') %>
+
+<div class="container">
+    <% if(message_failed.length) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= message_failed %>
+        </div>
+    <% } %>
+    <% if(message_success.length) { %>
+      <div class="alert alert-success" role="alert">
+          <%= message_success %>
+      </div>
+    <% } %>
+    <h1 style="text-align: center">Sales Page</h1>
+    <form action="/salesinsert" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Sales Person</label>
+                    <input type="text" name="name" id="name" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Customer</label>
+                <select name="customer" id="customer">
+                    <option disabled selected>Choose Customer</option>
+                    <% allcustomer.map(data => { %>
+                        <option value="<%= data._id %>"><%= data.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label>Goods</label>
+                <select name="goods" id="goods">
+                    <option disabled selected>Choose Goods</option>
+                    <% allgoods.map(data => { %>
+                        <option value="<%= data._id %>"><%= data.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="5">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </form>
+</div>
+
+
+
+<%- include('layouts/footer') %>

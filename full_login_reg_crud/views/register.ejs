@@ -1,0 +1,81 @@
+<%- include('layouts/header') %>
+
+<div class="container">
+    <% if(message_failed.length) { %>
+      <div class="alert alert-danger" role="alert">
+          <%= message_failed %>
+      </div>
+  <% } %>
+  <% if(message_success.length) { %>
+    <div class="alert alert-success" role="alert">
+        <%= message_success %>
+    </div>
+  <% } %>
+  <% if(message_warning.length) { %>
+    <div class="alert alert-warning" role="alert">
+        <%= message_warning %>
+    </div>
+  <% } %>
+  <% if(message_dark.length) { %>
+    <div class="alert alert-dark" role="alert">
+        <%= message_dark %>
+    </div>
+  <% } %>
+
+<h2>Registration Form</h2>
+<form action="/register" method="post">
+  <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" required class="form-control" id="name" placeholder="Enter Your Name" name="name">
+    </div>
+  <div class="form-group">
+    <label for="address">Address:</label>
+    <input type="text" required class="form-control" id="address" placeholder="Enter your Address" name="address">
+  </div>
+  <div class="form-group">
+      <label>Gender</label>
+      <input type="radio" required class="form-control" id="male" name="gender" value="Male">
+      <label>Male</label>
+      <input type="radio" required class="form-control" id="female" name="gender" value="Female">
+      <label>Female</label>
+      <input type="radio" required class="form-control" id="others" name="gender" value="Others">
+      <label>Others</label>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" required class="form-control" id="email" placeholder="Enter your email" name="email">
+  </div>
+  <div class="form-group">
+    <label for="contact">Contact:</label>
+    <input type="text" required class="form-control" id="contact" placeholder="Enter your number" name="contact">
+  </div>
+  <div class="form-group">
+    <label>Pan Number:</label>
+    <input type="text" required class="form-control" id="pan" placeholder="Enter your Pan number" name="pan">
+  </div>
+  <div class="form-group">
+    <label>Highest Education</label>
+    <select name="education" id="education">
+        <option disabled selected>Choose Your Highest Education</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="M.Tech">M.Tech</option>
+        <option value="BCA">BCA</option>
+        <option value="MCA">MCA</option>
+        <option value="P.H.D">P.H.D</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" required class="form-control" id="password" placeholder="Enter the password" name="password">
+  </div>
+  <div class="form-group">
+      <label for="confirmpassword">Confirm Password:</label>
+      <input type="password" required class="form-control" id="confirmpassword" placeholder="Enter confirm password" name="confirmpassword">
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+</div>
+
+
+
+<%- include('layouts/footer') %>

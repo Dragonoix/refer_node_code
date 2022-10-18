@@ -1,0 +1,66 @@
+<%- include('layouts/header') %>
+<div class="container">
+    <% if(message_success.length) { %>
+        <div class="alert alert-success" role="alert">
+            <%= message_success %>
+        </div>
+    <% } %>
+    <% if(message_failed.length) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= message_failed %>
+        </div>
+    <% } %>
+    <h1>Employee Data</h1>
+    <form action="/insert" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Employee Name</label>
+                <input type="text" class="form-control" name="employeeName" id="employeeName" required>
+            </div>
+            <div class="form-group">
+                <label>Basic Salary</label>
+                <input type="text" class="form-control" name="basicSalary" id="basicSalary" required>
+            </div>
+            <div class="form-group">
+                <label>DA</label>
+                <input type="text" class="form-control" name="DA" id="DA" required>
+            </div>
+            <div class="form-group">
+                <label>HRA</label>
+                <input type="text" class="form-control" name="HRA" id="HRA" required>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Sl. No</th>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Basic Salary</th>
+                        <th scope="col">DA</th>
+                        <th scope="col">HRA</th>
+                        <th scope="col">Gross-salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% allData.map((data, index) => { %>
+                        <tr>
+                            
+                            <td><%= ++index %></td>
+                            <td><%= data.employeeName %></td>
+                            <td><%= data.basicSalary %></td>
+                            <td><%= data.DA %></td>
+                            <td><%= data.HRA %></td>
+                            <td><%= data.grossSalary %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">ADD</button>
+    </form>
+</div>
+
+<%- include('layouts/footer') %>

@@ -1,0 +1,53 @@
+<%- include('layouts/header') %>
+<%- include('nav') %>
+
+<div class="container">
+    <% if(message_success.length) { %>
+        <div class="alert alert-success">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Success!</strong> <%= message_success %>
+          </div>
+    <% } %>
+    <% if(message_failed.length) { %>
+        <div class="alert alert-danger">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Danger!</strong> <%= message_failed %>
+          </div>
+    <% } %>
+      <% if(message_warning.length) { %>
+        <div class="alert alert-warning">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Warning!</strong> <%= message_warning %>
+          </div>
+    <% } %>
+
+    <form action="/insert" method="post">
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="name" id="name" class="registration-input" required>
+      <label><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" name="email" id="email" class="registration-input" required>
+  
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" id="password" class="registration-input" required>
+  
+      <label><b>Confirm Password</b></label>
+      <input type="password" placeholder="Confirm Password" name="confirmpassword" id="confirmpassword" class="registration-input" required>
+      <hr>
+  
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+
+  </form>
+</div>
+
+  <%- include('layouts/footer') %>
+
+
+
+
+
+

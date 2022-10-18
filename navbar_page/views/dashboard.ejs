@@ -1,0 +1,26 @@
+<%- include('layouts/header') %>
+<%- include('nav') %>
+<h1>Welcome <%= user.name %></h1>
+
+  <div class="container-dashboard">
+    <table class="center">
+      <tr>
+        <th>Sl. No</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+     
+        <% allData.map((data, index) => { %>
+          <tr>
+              <td><%= ++index %></td>
+              <td><%= data.name %></td>
+              <td><%= data.email %></td>
+            </tr>
+      <% }) %>
+       
+     
+    </table>
+    
+    </div>
+
+<%- include('layouts/footer') %>

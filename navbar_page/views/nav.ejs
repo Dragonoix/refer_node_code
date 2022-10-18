@@ -1,0 +1,23 @@
+<%- include('layouts/header') %>
+<div class="topnav">
+    <a href="#home" class="nav-menu">Home</a>
+    <a href="#about" class="nav-menu">About</a>
+    <a href="#contact" class="nav-menu">Contact</a>
+    <div class="login-container">
+     
+    <% if(user) { %>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-primary">Logout</button>
+        </form>
+    <% } else{ %>
+        <form action="/postlogin" method="post">
+            <input type="email" placeholder="Email" name="email" id="email" class="login-input" required>
+            <input type="password" placeholder="Password" name="password" id="password" class="login-input" required>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      
+        <%} %>
+   
+    </div>
+  </div>
+  <%- include('layouts/footer') %>

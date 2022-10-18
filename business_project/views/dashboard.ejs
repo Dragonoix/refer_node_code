@@ -1,0 +1,34 @@
+<%- include('layouts/header') %>
+
+<h1>Welcome <%= user.MyName %></h1>
+
+  <div class="container-dashboard">
+    <table class="table table-striped">
+        <tr>
+        <th>Sl. No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Qualification</th>
+      </tr>
+     
+        <% allData.map((data, index) => { %>
+          <tr>
+              <td><%= ++index %></td>
+              <td><%= data.MyName %></td>
+              <td><%= data.MyEmail %></td>
+              <td><%= data.MyGender %></td>
+              <td><%= data.MyEducation %></td>
+            </tr>
+      <% }) %>
+       
+    </table>
+    
+    </div>
+    <div>
+        <form action="/logout" method="get">
+            <button type="submit" class="q" id="button">Logout</button>
+        </form>
+    </div>
+
+<%- include('layouts/footer') %>

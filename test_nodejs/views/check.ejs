@@ -1,0 +1,44 @@
+<%- include('layouts/header') %>
+
+<% if(messege.length) { %>
+  <div class="alert alert-success" role="alert">
+    <%= messege %>
+  </div>
+<% } %>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sl. No</th>
+        <th scope="col">Image</th>
+        <th scope="col">Image Title</th>
+        <th scope="col">Image Description</th>
+        <th scope="col">Artist Name</th>
+        <th scope="col">Artist Email</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Price</th>
+        <th scope="col">Tags</th>
+        <th scope="col">Date</th>
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% allData.map((data, index) => { %>
+            <tr>
+                <td><%= ++index %></td>
+                <td><img src="/uploads/<%= data.image %>" width="50px" height="50px"></td>
+                <td><%= data.title %></td>
+                <td><%= data.description %></td>
+                <td><%= data.name %></td>
+                <td><%= data.email %></td>
+                <td><%= data.number %></td>
+                <td><%= data.price %></td>
+                <td><ul><% for (var i=0; i < data.tags.length ; i++) { %><li><%= data.tags[i] %></li><% } %></ul></td>
+                <td><%= moment(data.date).format('DD-MM-YYYY') %></td>
+                <td><a href="edit/<%= data._id %>">Edit</a></td>
+                <td><a href="delete/<%= data._id %>">Delete</a></td>
+        <% }) %>
+    </tbody>
+  </table>
+
+<%- include('layouts/footer') %>

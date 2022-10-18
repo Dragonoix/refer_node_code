@@ -1,0 +1,25 @@
+{
+  "name": "aggregation",
+  "version": "1.0.0",
+  "description": "This is a project for joining of tables ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "Node",
+    "Js"
+  ],
+  "author": "Biswarup",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.1"
+  }
+}

@@ -1,0 +1,23 @@
+<%- include('layouts/header') %>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sl. No</th>
+        <th scope="col">Goods Name</th>
+        <th scope="col">Price</th>
+     
+    </thead>
+    <tbody>
+        <% allData.map((data, index) => { %>
+            <tr>
+                <td><%= ++index %></td>
+                <td><%= data.name %></td>              
+                <td><%= data.price %></td>
+
+            
+        <% }) %>
+    </tbody>
+  </table>
+
+<%- include('layouts/footer') %>

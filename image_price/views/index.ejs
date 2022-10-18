@@ -1,0 +1,45 @@
+<%- include('layouts/header') %>
+<div class="container">
+    <% if(message_success.length) { %>
+        <div class="alert alert-success" role="alert">
+            <%= message_success %>
+        </div>
+    <% } %>
+    <% if(message_failed.length) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= message_failed %>
+        </div>
+    <% } %>
+    <h1>Artist Data</h1>
+    <form action="/insert" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Artist Name</label>
+                <input type="text" class="form-control" name="artistName" id="artistName" required>
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" class="form-control" name="price" id="price" required>
+            </div>
+            <div class="form-group">
+                <label>Image</label>
+                <input type="file" name="image" accept="image/*"> 
+            </div>
+        </div>
+        <div class="col-md-6">
+            <% allData.map((data)=> { %>
+                <div id="imagesMain">
+                    <div class="imagebox">
+                        <img src="/uploads/<%= data.image %>">
+                        <div class="caption"><%= data.artistName %> <%= data.price %></div>             
+                    </div>        
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">ADD</button>
+    </form>
+</div>
+
+<%- include('layouts/footer') %>

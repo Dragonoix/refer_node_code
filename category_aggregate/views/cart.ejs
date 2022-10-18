@@ -1,0 +1,10 @@
+<form action="/cartinsert" method="post">
+    <label>Quantity</label>
+    <input type="number" name="quantity" id="quantity" required> <br>
+    <select name="product" id="product">
+        <% allproduct.map(data => { %>
+            <option value="<%= data._id %>"><%= data.name %></option>
+        <% }) %>
+    </select>
+    <input type="submit" name="submit">
+</form>
